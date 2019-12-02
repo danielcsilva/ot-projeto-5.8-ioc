@@ -12,12 +12,12 @@ namespace App\Services;
 interface ContatoService
 {
 
-    public function salvarContato($cotato):array;
+    public function salvarContato($contato);
 
-    public function listarContato():any;
+    public function listarContato();
 
-    public function updateContato($contato):array;
+    public function updateContato($contato,$id);
 
-    public function editContato($id):integer;
+    public function deleteContato($id);
 
 }

@@ -15,7 +15,9 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         //service
 
+
         $this->app->bind(\App\Services\ContatoService::class, \App\Services\ContatoServiceImpl::class);
+        $this->app->bind(\App\Services\TelefoneService::class, \App\Services\TelefoneServiceImpl::class);
 
     }
 

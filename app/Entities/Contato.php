@@ -27,4 +27,9 @@ class Contato extends Model implements Transformable
     protected $fillable = ['con_st_nome','con_st_email'];
 
     protected $guarded = ['deleted_at', 'updated_at', 'created_at'];
+
+    public function telefones()
+    {
+        return $this->hasMany('App\Entities\Telefone', 'con_in_id');
+    }
 }

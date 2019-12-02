@@ -20,6 +20,18 @@ class Telefone extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $table = 'tb_telefones';
+
+    protected $primaryKey = 'tel_in_id';
+
+    protected $fillable = ['tel_in_ddd','tel_in_telefone','con_in_id'];
+
+    protected $guarded = ['deleted_at', 'updated_at', 'created_at'];
+
+
+    public function contato()
+    {
+        return $this->hasOne('App\Entities\Contato', 'con_in_id');
+    }
 
 }

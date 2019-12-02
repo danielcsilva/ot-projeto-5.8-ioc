@@ -15,10 +15,12 @@ class CreateTelefonesTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('telefones', function(Blueprint $table) {
-            $table->increments('id');
-
-            $table->timestamps();
+		Schema::create('tb_telefones', function(Blueprint $table) {
+            $table->increments('tel_in_id')->unsigned();
+            $table->string('tel_in_ddd',3);
+            $table->string('tel_in_telefone',15);
+            $table->timestampsTz();
+            $table->softDeletesTz();
 		});
 	}
 
@@ -29,6 +31,6 @@ class CreateTelefonesTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('telefones');
+		Schema::drop('tb_telefones');
 	}
 }
